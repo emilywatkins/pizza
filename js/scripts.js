@@ -41,20 +41,27 @@ $(document).ready(function() {
     var inputVeg = $(".veg:checked").val();
 
     var pizza = new Pizza(inputSize, [], [])
-    
-    $(".meat:checked").each(function() {
-      var inputMeat = $(this).val();
-      pizza.addMeat(inputMeat);
-    });
 
-    $(".veg:checked").each(function() {
-      var inputVeg = $(this).val();
-      pizza.addVeg(inputVeg);
-    });
 
     var totalPrice = pizza.toppingsPrice(countMeat, countVeg) + pizza.sizePrice(pizzaPrice);
 
     console.log(totalPrice);
 
+    $(".result").append("<div id='resultDetails'>" + "<h2><u>Order summary</u></h2>" +
+                        "<h4>" + inputSize + " pizza </h4>" +
+                        "<h4>Total price: $" + totalPrice + "</h4>" +
+                        "<h4>Toppings:</h4>" + "</div>");
+
+    $(".meat:checked").each(function() {
+      var inputMeat = $(this).val();
+      pizza.addMeat(inputMeat);
+      $(".result").append(inputMeat + "<br>");
+    });
+
+    $(".veg:checked").each(function() {
+      var inputVeg = $(this).val();
+      pizza.addVeg(inputVeg);
+      $(".result").append(inputVeg + "<br>");
+    });
   })
 })
