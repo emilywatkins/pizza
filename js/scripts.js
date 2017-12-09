@@ -15,8 +15,8 @@ Pizza.prototype.sizePrice = function(pizzaPrice) {
   return pizzaPrice;
 };
 
-Pizza.prototype.toppingsPrice = function(pizzaPrice) {
-
+Pizza.prototype.toppingsPrice = function(inputMeat, inputVeg) {
+  return (inputMeat * 2) + inputVeg;
 };
 
 $(document).ready(function() {
