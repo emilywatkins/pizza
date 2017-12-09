@@ -5,9 +5,20 @@ function Pizza(size, meat, veg, side) {
   this.side = side;
 };
 
-Pizza.prototype.calculate = function(pizzaPrice) {
-  
-}
+Pizza.prototype.sizePrice = function(pizzaPrice) {
+  if (this.size === "small") {
+    pizzaPrice += 1;
+  } else if (this.size === "medium") {
+    pizzaPrice += 2;
+  } else if (this.size === "large") {
+    pizzaPrice += 3;
+  }
+  return pizzaPrice;
+};
+
+Pizza.prototype.toppingsPrice = function(pizzaPrice) {
+
+};
 
 $(document).ready(function() {
   $("#order").submit(function(event) {
@@ -17,9 +28,11 @@ $(document).ready(function() {
     var pizzaPrice = 5;
 
     var inputSize = $("#size").val();
-    var inputMeat = $("input:checkbox[name=meat]:checked").val();
-    var inputVeg = $("input:checkbox[name=veg]:checked").val();
+    var inputMeat = $(".meat:checked").length;
+    var inputVeg = $(".veg:checked").length;
     var inputSide = $("#side").val();
+
+    var adjustedPrice = new Pizza(inputSize, )
     console.log(inputMeat);
 
   })
