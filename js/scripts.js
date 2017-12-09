@@ -15,9 +15,17 @@ Pizza.prototype.sizePrice = function(pizzaPrice) {
   return pizzaPrice;
 };
 
-Pizza.prototype.toppingsPrice = function(inputMeat, inputVeg) {
-  return (inputMeat * 2) + inputVeg;
+Pizza.prototype.toppingsPrice = function(countMeat, countVeg) {
+  return (countMeat * 2) + countVeg;
 };
+
+Pizza.prototype.addMeat = function(inputMeat) {
+  this.meat.push(inputMeat);
+}
+
+Pizza.prototype.addVeg = function(inputVeg) {
+  this.veg.push(inputVeg);
+}
 
 $(document).ready(function() {
   $("#order").submit(function(event) {
@@ -27,11 +35,26 @@ $(document).ready(function() {
     var pizzaPrice = 5;
 
     var inputSize = $("#size").val();
-    var inputMeat = $(".meat:checked").length;
-    var inputVeg = $(".veg:checked").length;
+    var countMeat = $(".meat:checked").length;
+    var countVeg = $(".veg:checked").length;
+    var inputMeat = $(".meat:checked").val();
+    var inputVeg = $(".veg:checked").val();
 
-    var adjustedPrice = new Pizza(inputSize, )
-    console.log(inputMeat);
+    var pizza = new Pizza(inputSize, [], [])
+    
+    $(".meat:checked").each(function() {
+      var inputMeat = $(this).val();
+      pizza.addMeat(inputMeat);
+    });
+
+    $(".veg:checked").each(function() {
+      var inputVeg = $(this).val();
+      pizza.addVeg(inputVeg);
+    });
+
+    var totalPrice = pizza.toppingsPrice(countMeat, countVeg) + pizza.sizePrice(pizzaPrice);
+
+    console.log(totalPrice);
 
   })
 })
