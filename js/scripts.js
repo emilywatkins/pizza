@@ -1,8 +1,7 @@
-function Pizza(size, meat, veg, side) {
+function Pizza(size, meat, veg) {
   this.size = size;
   this.meat = meat;
   this.veg = veg;
-  this.side = side;
 };
 
 Pizza.prototype.sizePrice = function(pizzaPrice) {
@@ -30,7 +29,6 @@ $(document).ready(function() {
     var inputSize = $("#size").val();
     var inputMeat = $(".meat:checked").length;
     var inputVeg = $(".veg:checked").length;
-    var inputSide = $("#side").val();
 
     var adjustedPrice = new Pizza(inputSize, )
     console.log(inputMeat);
