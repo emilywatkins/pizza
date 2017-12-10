@@ -10,7 +10,7 @@ This page asks the user for relevant information for ordering a pizza: size, mea
 
 ## Specs
 
-* It can adjust total price based on size selection. Base price = 5, small adds 1, medium adds 2, large adds 3.
+* It can adjust total price based on size selection. Base price = 5. Small adds 1, medium adds 2, large adds 3.
   * Example Input: small, medium, large
   * Example Output: [6], [7], [8]
 
