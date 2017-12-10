@@ -6,7 +6,21 @@
 
 ## Description
 
-This page asks the user for relevant information for ordering a pizza: size, meat toppings, and veg toppings. Based on this input, an order summary will describe the specifications and calculate a total cost. The base price is $5. Small adds $1, medium adds $2, large adds $5. Meat toppings add $2 each, veg toppings add $1 each. This project is an exercise in object oriented JavaScript, jQuery, constructors, and prototype methods.
+This page asks the user for relevant information for ordering a pizza: size, meat toppings, and veg toppings. Based on this input, an order summary will describe the specifications and calculate a total cost. This project is an exercise in object oriented JavaScript, jQuery, constructors, and prototype methods.
+
+## Specs
+
+* It can adjust total price based on size selection. Base price = 5, small adds 1, medium adds 2, large adds 3.
+  * Example Input: small, medium, large
+  * Example Output: [6], [7], [8]
+
+* It can adjust total price based on meat toppings selection. Meet toppings add 2 each.
+  * Example Input: medium with pepperoni and sausage
+  * Example Output: [11]
+
+* It can adjust total price based on veg toppings selection. Veg toppings add 1 each.
+  * Example Input: medium with pepperoni and spinach
+  * Example Output: [10]
 
 ## Setup
 
